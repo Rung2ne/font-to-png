@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    border: 1px solid #e2e8f0;
+    width: 100%;
+    max-width: 540px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.sub-label {
+    font-size: 0.72rem;
+    color: #64748b;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    white-space: nowrap;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #0f172a;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="file"]:hover {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: background-color 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #1d4ed8;
+}
+
+.color-inputs-container {
+    display: grid;
+    grid-template-columns: 46px 1fr 1fr 115px;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+@media (max-width: 520px) {
+    .color-inputs-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.color-item-picker {
+    align-items: center;
+}
+
+.pickr .pcr-button {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    border: 2px solid #ffffff !important;
+    outline: 1px solid #cbd5e1 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s ease !important;
+    background: var(--pcr-color) !important;
+}
+
+.pickr .pcr-button::before,
+.pickr .pcr-button::after {
+    border-radius: 50% !important;
+}
+
+.pickr .pcr-button:hover {
+    transform: scale(1.08);
+}
+
+button#generateBtn {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transition: all 0.2s ease;
+}
+
+button#generateBtn:hover {
+    background-color: #1d4ed8;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
+}
+
+#previewContainer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+#mainCanvas {
+    display: none;
+    max-width: 100%;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    background-image: linear-gradient(45deg, #f1f5f9 25%, transparent 25%), 
+                      linear-gradient(-45deg, #f1f5f9 25%, transparent 25%), 
+                      linear-gradient(45deg, transparent 75%, #f1f5f9 75%), 
+                      linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+}
